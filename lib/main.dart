@@ -135,24 +135,33 @@ class FirstRoute extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 500), 
-          Align(
-            alignment: Alignment.center,
-            child: Text(
-              'Don’t have an account? Signup',
-              style: TextStyle(
-                color: Color.fromARGB(255, 12, 1, 156),
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+          SizedBox(height: 10),
+              Align( // Centering the "Already have an account? Login" text
+                alignment: Alignment.center,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SecondPage(data: 'Hello there from the Login!'),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'Don’t have an account? Signup',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 12, 1, 156),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
-        ],
-      ),
-    ),
-  );
+        ),
+      );
 }
-    
 }
 
 
